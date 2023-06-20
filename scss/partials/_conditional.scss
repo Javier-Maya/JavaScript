@@ -1,0 +1,17 @@
+$lugar:"apertura";
+
+@if($lugar == "apertura")
+{
+    body{
+         background-image: url(../img/Hinchada_Universidad_de_Chile_azul.jpg);
+     }
+ }@else if($lugar == "clausura")
+ {
+     body{
+         background-image: url(../img/Hinchada_Universidad_de_Chile_clausura.jpeg);
+     }
+ }@else{
+     body{
+         background-image: url(../img/Hinchada_Universidad_de_Chile_otro.jpeg);
+     }
+ }

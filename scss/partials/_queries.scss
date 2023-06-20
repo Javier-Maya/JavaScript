@@ -1,0 +1,8 @@
+/* Asignando valores que modifican presentación de las páginas */
+@media screen and (max-width:992px){
+    .container, .container-lg{ 
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        min-height: 100vh;
+    }
+}

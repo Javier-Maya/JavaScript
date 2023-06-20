@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Se agrega meta de descripción y palabras claves -->
+    <meta name="description" content="FanSite dedicada para recordar al equipo campeón de la Copa Sudamericana 2011">
+    <meta name="keywords" content="FanSite, Universidad de Chile, Sudamericana, 2011, Los de Abajo">
+    <!-- Se agrega enlace de bootstrap, hoja de estilo e icono  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> 
+    <!-- <link rel="stylesheet" href="./css/bootstrap.css"> -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./img/Universidad_de_Chile.png" type="image/x-icon">
+    <!-- Se inserta título de página -->
+    <title>Universidad de Chile - Página de inicio</title>
+</head>
+<body>
+    <!-- Creación del header de la página -->
+    <header class="sticky-top">
+        <!-- Inicio del navegador como encabezado -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./img/Universidad_de_Chile.png" alt="Universidad de Chile Logo" style="width:40px;" class="rounded-pill"> 
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="./index.html">INICIO</a></li>
+                        <li class="nav-item"><a href="./html/equipo.html">EQUIPO</a></li>
+                        <li class="nav-item"><a href="./html/hinchada.html">HINCHADA</a></li>
+                        <li class="nav-item"><a href="./html/galeria.html">GALERÍA</a></li>
+                        <li class="nav-item"><a href="./html/contacto.html">CONTACTO</a></li>   
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Creación del contenido de la página -->
+    <main class="container-lg">
+        <section class="container-fluid"> 
+            <!-- <h1 class="animate__animated animate__fadeIn">¡ Bienvenidos al FanSite de la U. de Chile, campeón Sudamericana 2011 !</h1>  -->
+            <div class="animate__animated animate__fadeIn">
+                <h1>¡ Bienvenidos al FanSite de la U. de Chile !</h1>
+                <h3>Campeón invicto, Copa Sudamericana 2011 🏆</h3>
+            </div>
+        </section>
+        <!-- Contenedor que contendrá toda la información de imagen y texto dentro -->
+        <section class="container-lg">
+            <div class="row">
+                <!-- Contenedor con información de texto -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>
+                            El 14 de diciembre de 2011, Universidad de Chile termina cerrando su participación en la Copa Bridgestone Sudamericana... goleando a Liga de Quito en el Estadio Nacional, consiguiendo de manera INVICTA su primer título internacional.<br><br>
+                            Es por eso que la finalidad de este sitio web es recordar al equipo campeón de la Copa Sudamericana 2011, sin olvidar a la hinchada Los de Abajo, la que sigue a la U a todas partes.
+                        </p>  
+                    </div>
+                </div>
+                <!-- Contenedor con slideshow de imágenes -->
+                <div data-aos="flip-up" class="col-lg-12 text-center">
+                    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="./img/Campeones 2011 4.jpeg" class="img-thumbnail" alt="Primera Imagen Universidad de Chile Campeón Copa Sudamericana 2011">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./img/Campeones 2011.jpeg" class="img-thumbnail" alt="Segunda Imagen Universidad de Chile Campeón Copa Sudamericana 2011">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./img/Campeones 2011 3.jpeg" class="img-thumbnail" alt="Tercera Imagen Universidad de Chile Campeón Copa Sudamericana 2011">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./img/Campeones 2011 2.jpeg" class="img-thumbnail" alt="Cuarta Imagen Universidad de Chile Campeón Copa Sudamericana 2011">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main> 
+
+    <!-- Creación del footer de la página -->
+    <footer class="row g-3">
+        <div class="col-lg-12">
+            <p>Universidad de Chile - La U - Los de Abajo</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap, AOS scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <!-- <script src="./js/bootstrap.bundle.js"></script> -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

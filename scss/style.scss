@@ -1,0 +1,76 @@
+@import "partials/fonts";
+@import "partials/reset";
+@import "partials/variables";
+
+
+/* Asignando valores al fondo de las páginas */
+body{ 
+    background-image: url(../img/Hinchada_Universidad_de_Chile_azul.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    font-family: "Ubuntu";
+}
+
+/* Asignando valores para el navegador superior */
+.navbar{
+    // @include sizes(100%,100vh);
+    background: linear-gradient(to bottom,$azul 50%,$rojo 50%);
+    color: #fff;
+    text-shadow: 1px 1px 1px rgb(0 0 0 / 60%);
+    padding: 0px 20px;
+    ul .nav-item{
+        padding: 10px 15px;
+        a{
+            font-size: $fontSizeSmallMedium;
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}
+
+/* Asignando valores a la información que contendrá dentro del container */
+.container, .container-lg{ 
+    background-color: rgb(255, 255, 255);
+    width: 75%;
+    min-height: 100vh;
+    h1{
+        font-size: $fontSizeBig;
+        text-align: center;
+        padding: 30px 0px;
+        color:#000000;
+    }
+    h2{
+        font-size: $fontSizeMedium;
+        padding: 30px 0px;
+    }
+    h3{
+        font-size: $fontSizeMediumBig;
+        padding: 0px 0px 30px 0px;
+        text-align: center;
+    }
+    p{
+        font-size: $fontSizeSmall;
+    }
+}
+
+.row{ 
+    padding: 0;
+    margin: 0;
+    p{
+        font-size: $fontSizeSmallMedium;
+    }
+}
+
+/* Asignando valores al pie de página */
+footer{
+    background: linear-gradient(to bottom,$azul 50%,$rojo 50%);
+    color: #fff;
+    text-shadow: 1px 1px 1px rgb(0 0 0 / 60%); 
+    text-align: center;
+    bottom: 0;
+}
+
+@import "partials/queries";
+@import "partials/conditional";
