@@ -134,17 +134,21 @@ const borrarCarrito = ()=>{
     renderizarCarrito();
 }
 
+// Función que se utiliza para renderizar una lista de productos en el DOM
 const renderizarProductos = (arrayUtilizado)=>{
-    // renderiza productos en el DOM
+    // Renderizar productos en el DOM
     const contenedorProductos = document.getElementById("contenedorProductos")
-    // borramos para no duplicar
+    // Limpiamos el contenedor para evitar duplicados
     contenedorProductos.innerHTML = ""
+    // Iteramos sobre el array de productos
     arrayUtilizado.forEach(({name, id, type, price, stock, description})=>{
+        // Creamos un elemento de tarjeta para cada producto
         const prodCard = document.createElement("div")
         prodCard.classList.add("col-xs")
         prodCard.classList.add("card")
         prodCard.style = "width: 270px;height: 550px; margin:3px"
         prodCard.id = id
+        // Generamos el contenido HTML de la tarjeta del producto
         prodCard.innerHTML = `
                 <img src="../assets/${name}.png" class="card-img-top" alt="${name}">
                 <div class="card-body">
@@ -159,6 +163,7 @@ const renderizarProductos = (arrayUtilizado)=>{
                         <button class="btn btn-primary" id="botonProd${id}">Agregar</button>
                     </form>
                 </div>`
+        // Agregamos la tarjeta del producto al contenedor
         contenedorProductos.appendChild(prodCard)
         const btn = document.getElementById(`botonProd${id}`)
         // Funcionalidad al boton de agregar para agregar productos al carrito
@@ -169,10 +174,8 @@ const renderizarProductos = (arrayUtilizado)=>{
             if(contadorQuantity>0){
                 // Agregamos el producto al carrito
                 agregarCarrito({name, id, type, price, stock, description, quantity:contadorQuantity})
-               
                 // Renderizamos el carrito actualizado
                 renderizarCarrito()
-
                 // Reiniciamos el formulario
                 const form = document.getElementById(`form${id}`)
                 form.reset()
@@ -181,36 +184,40 @@ const renderizarProductos = (arrayUtilizado)=>{
     })
 }
 
+// Se utiliza para procesar y almacenar los datos de un formulario de compra, generar un "ticket" con los datos del cliente y los productos del carrito, y guardar ese ticket en una "base de datos" simulada (localStorage)
 const finalizarCompra = (event) => {
-    // como conseguir todos los datos de un form
-    // conseguimos la data de la form
+    // Obtener todos los datos del formulario a través del objeto FormData
     const data = new FormData(event.target)
-    // creamos un objeto que sea {nombreInput: valorInput,...}
+    // Crear un objeto con los datos del cliente
     const cliente = Object.fromEntries(data)
-    // Creamos un "ticket"
-    const ticket = {cliente: cliente, total:totalCarrito(),id:pedidos.length, productos:carrito} //idealmente le ponen id único mejor que este
+    // Crear el ticket con los datos del cliente, el total del carrito, un ID único y los productos del carrito
+    const ticket = {cliente: cliente, total:totalCarrito(), id:pedidos.length, productos:carrito} //idealmente le ponen id único mejor que este
     pedidos.push(ticket)
-    // Guardamos el ticket en nuestra "base de datos"
+    // Agregar el ticket a la "base de datos" (localStorage)
     localStorage.setItem("pedidos", JSON.stringify(pedidos))
-    // Borra el array y le da un mensaje al usuario
+    // Borrar el carrito después de finalizar la compra
     borrarCarrito()
+    // Mostrar un mensaje de agradecimiento al usuario
     let mensaje = document.getElementById("carritoTotal")
-    mensaje.innerHTML = "Muchas gracias por su compra, los esperamos pronto"
+    mensaje.innerHTML = "Muchas gracias por su compra !"
 }
 
-// DOM
+// Evento de escucha para el envío del formulario con el elemento "formCompraFinal"
 const compraFinal = document.getElementById("formCompraFinal")
 compraFinal.addEventListener("submit",(event)=>{
-    // evitamos el reset
+    // Evitamos el reinicio del formulario
     event.preventDefault()
+    // Se verifica si el carrito contiene elementos
     if(carrito.length>0){
         finalizarCompra(event)
     } else {
-        // console.warn("canasta vacia") // no para esta entrega, lo ahcemos a futuro con lirberias
+        console.warn("Canasta vacía")
     }
-    compraFinal.reset(); // Borra los datos del formulario
+    // Borrar los datos del formulario
+    compraFinal.reset(); 
 })
 
+// Actualiza la visualización de los productos según el tipo seleccionado. Si se selecciona el valor "0", se muestran todos los productos. Si se selecciona otro valor, se filtran y muestran solo los productos correspondientes a ese tipo.
 const selectorTipo = document.getElementById("tipoProducto")
 selectorTipo.onchange = (evt) => {
     const tipoSeleccionado =  evt.target.value
@@ -221,6 +228,7 @@ selectorTipo.onchange = (evt) => {
     }
 }
 
+// Se define un flujo de ejecución para la aplicación
 const app = () => {
     productosPreexistentes()
     renderizarProductos(productos)
@@ -228,4 +236,5 @@ const app = () => {
     totalCarritoRender()
 }
 
+// Se ejecutará el flujo de ejecución definido en la función app.
 app()
